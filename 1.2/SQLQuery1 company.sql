@@ -1,0 +1,33 @@
+CREATE DATABASE company;
+
+USE company;
+
+CREATE TABLE Company
+(
+	idCompany	INT PRIMARY KEY IDENTITY,
+	CompanyName VARCHAR(200) NOT NULL,
+);
+CREATE TABLE Brand
+(
+	idBrand		INT PRIMARY KEY IDENTITY,
+	BrandName	VARCHAR(20) NOT NULL,
+);
+CREATE TABLE Model
+(
+	idModel		INT PRIMARY KEY IDENTITY,
+	ModelName	VARCHAR(50) NOT NULL,
+);
+CREATE TABLE Client
+(
+	idClient	INT PRIMARY KEY IDENTITY,
+	Name		VARCHAR(200) NOT NULL,
+);
+CREATE TABLE Vehicle
+(
+	idVehicle		INT PRIMARY KEY IDENTITY,
+	idCompany		INT FOREIGN KEY REFERENCES Company(idCompany),
+	idBrand			INT FOREIGN KEY REFERENCES Brand(idBrand),
+	idModel			INT FOREIGN KEY REFERENCES Model(idModel),
+	idClient		INT FOREIGN KEY REFERENCES Client(idClient),
+	VehicleName		VARCHAR(60) NOT NULL,
+);
