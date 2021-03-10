@@ -1,0 +1,60 @@
+Gufi é uma escola técnica por desenvolvimento de software
+
+Perfis de usuário:
+Administrador: Área administrativa da escola
+Comum: Pode ser um expectador ou palestrante
+
+adm: 	pode cadastrar qualquer tipo de usuário
+	o adm poderá cadastrar os dados da instituição
+	o adm poderá cadastrar os tipos de eventos
+	o adm podera cadastrar eventos livres
+	
+Uuário:	qualquer usuário poderá ver os eventos que ele participa
+	usuário poderá se inscrever para assistir um evento
+	o administrador poderá aprovar a participação do espectador de um determinado evento restrito
+
+	SISTEMA MOBILE
+adm: área administrativa da escola
+usuário:pode ser um espectador ou palestrante
+
+	Funcionalidades
+.qualquer usuário autenticado poderá ver todos os eventos cadastrados
+.o usuário comum poderá se inscrever para assistir a um evento
+.o usuário comum poderá ver os eventos que participará
+		
+
+entidades: 	instituições
+		idInstituiçoes
+		CNPJ
+		nomefantasia
+		endereço
+
+		tiposUsuarios
+		idtipoUsuario
+		tituloTipoUsuario
+
+		usuarios
+		idusuario
+		idTipoUsuario
+		nomeUsuario
+		email
+		senha
+
+		tiposEvento
+		idTipoEvento
+		tituloTipoEvento
+
+		evento
+		idEvento
+		idTipoEvento
+		idInstituicao
+		nomeEvento
+		acessoLivre
+		dataEvento
+		descricao
+
+		presenças
+		idPresenca
+		idEvento
+		idUsuario
+		situacao
