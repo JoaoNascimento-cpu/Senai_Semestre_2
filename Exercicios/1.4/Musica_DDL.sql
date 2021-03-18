@@ -1,0 +1,40 @@
+CREATE DATABASE Musica;
+
+USE Musica;
+GO
+
+CREATE TABLE artista
+(
+	idArtista INT PRIMARY KEY IDENTITY,
+	nome VARCHAR(255) NOT NULL,
+);
+GO
+
+CREATE TABLE albuns
+(
+	idAlbum INT PRIMARY KEY IDENTITY
+	idArtista INT FOREIGN KEY REFERENCES artista(idArtista),
+);
+GO
+
+CREATE TABLE estilos
+(
+	idEstilo INT PRIMARY KEY IDENTITY,
+	nome VARCHAR(255) NOT NULL,
+);
+GO
+
+CREATE TABLE albunsEstilos
+(
+	idAlbum INT FOREIGN KEY REFERENCES albuns(idAlbum),
+	idEstilo INT FOREIGN KEY REFERENCES estilos(idEstilo),
+);
+
+CREATE TABLE usuario
+(
+	idUsuario INT PRIMARY KEY IDENTITY,
+	nomeUsuario VARCHAR(255) NOT NULL,
+	email VARCHAR(255) NOT NULL,
+	senha VARCHAR(255) NOT NULL,
+	permissao VARCHAR(255) NOT NULL,
+);
